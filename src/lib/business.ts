@@ -1,9 +1,9 @@
 export const BUSINESS = {
   name: "car2scrap",
-  phone: "+919808903131",
-  phoneDisplay: "+91 98089 03131",
-  whatsapp: "919808903131",
-  email: "turbo.rony@yahoo.com",
+  phone: "+91 7376487641",
+  phoneDisplay: "+91 7376487641",
+  whatsapp: "917376487641",
+  email: "himeshverma021@gmail.com",
   address:
     "Gata No.142, Near Testify Rice Mill, Rajarampur, Sikandarabad Industrial Area, Bulandshahar – 203205",
   mapsEmbed:
