@@ -26,16 +26,18 @@ export function Testimonials() {
   return (
     <div className="grid gap-5 md:grid-cols-3">
       {TESTIMONIALS.map((t) => (
-        <Card key={t.name} className="p-6 shadow-card hover:shadow-elegant transition-base">
-          <div className="flex gap-0.5 text-accent-green mb-3">
+        <Card key={t.name} className="group flex h-full flex-col p-6 shadow-card transition-all duration-200 hover:-translate-y-1 hover:shadow-elegant">
+          <div className="mb-4 flex items-center gap-1 text-accent-green">
             {Array.from({ length: 5 }).map((_, i) => (
               <Star key={i} className="h-4 w-4 fill-current" />
             ))}
           </div>
-          <p className="text-sm leading-relaxed text-foreground/85">"{t.quote}"</p>
-          <div className="mt-4 pt-4 border-t">
-            <p className="font-semibold text-sm">{t.name}</p>
-            <p className="text-xs text-muted-foreground">{t.city}</p>
+
+          <p className="text-base leading-7 text-foreground/85">“{t.quote}”</p>
+
+          <div className="mt-6 border-t border-border pt-4">
+            <p className="font-semibold text-sm text-primary">{t.name}</p>
+            <p className="mt-1 text-xs uppercase tracking-[0.14em] text-muted-foreground">{t.city}</p>
           </div>
         </Card>
       ))}

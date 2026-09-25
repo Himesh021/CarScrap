@@ -6,6 +6,7 @@ export const BUSINESS = {
   email: "himeshverma021@gmail.com",
   address:
     "Gata No.142, Near Testify Rice Mill, Rajarampur, Sikandarabad Industrial Area, Bulandshahar – 203205",
+  mapsLink: "https://www.google.com/maps/search/?api=1&query=Gata+No.142+Near+Testify+Rice+Mill+Rajarampur+Sikandarabad+Industrial+Area+Bulandshahar+203205",
   mapsEmbed:
     "https://www.google.com/maps?q=Sikandarabad+Industrial+Area,+Bulandshahar&output=embed",
 } as const;

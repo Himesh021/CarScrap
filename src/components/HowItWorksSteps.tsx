@@ -23,21 +23,28 @@ const STEPS = [
 
 export function HowItWorksSteps({ compact = false }: { compact?: boolean }) {
   return (
-    <div className={compact ? "grid gap-5 md:grid-cols-3" : "grid gap-8 md:grid-cols-3"}>
-      {STEPS.map((s) => (
+    <div className={compact ? "grid gap-5 md:grid-cols-3" : "grid gap-6 md:grid-cols-3"}>
+      {STEPS.map((s, index) => (
         <div key={s.n} className="relative">
-          <div className="flex flex-col items-start gap-4">
-            <div className="relative">
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-cta text-accent-green-foreground shadow-elegant">
-                <s.icon className="h-7 w-7" />
+          {index < STEPS.length - 1 && (
+            <div className="step-divider hidden md:block" aria-hidden="true" />
+          )}
+          <div className="premium-card relative h-full p-6 md:p-7">
+            <div className="mb-5 flex items-center justify-between">
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-cta text-accent-green-foreground shadow-elegant transition-transform duration-200 group-hover:scale-105">
+                <s.icon className="h-6 w-6" />
               </div>
-              <span className="absolute -top-2 -right-2 h-7 w-7 rounded-full bg-primary text-primary-foreground text-xs font-bold flex items-center justify-center shadow-card">
+              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-accent-green-soft text-sm font-bold text-accent-green ring-8 ring-white">
                 {s.n}
               </span>
             </div>
+
             <div>
-              <h3 className="font-bold text-lg font-[Poppins]">{s.title}</h3>
-              <p className="text-sm text-muted-foreground mt-1.5 leading-relaxed">{s.desc}</p>
+              <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-accent-green">
+                Step {s.n}
+              </p>
+              <h3 className="font-bold text-xl font-[Poppins] text-primary">{s.title}</h3>
+              <p className="mt-3 text-sm leading-7 text-muted-foreground">{s.desc}</p>
             </div>
           </div>
         </div>

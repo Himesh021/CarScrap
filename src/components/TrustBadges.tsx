@@ -18,43 +18,26 @@ export function TrustBadges({ className, variant = "default" }: TrustBadgesProps
   return (
     <div
       className={cn(
-        "flex",
-        variant === "default" && "flex-wrap justify-center gap-3",
-        variant === "compact" && "flex-col gap-2",
-        variant === "overlap" &&
-          "flex flex-wrap justify-center gap-2 md:gap-0 md:-space-x-3 px-2",
-        className
+        "grid",
+        variant === "default" && "grid-cols-2 gap-4 md:grid-cols-3 xl:grid-cols-5",
+        variant === "compact" && "grid gap-2",
+        variant === "overlap" && "flex flex-wrap justify-center gap-3 md:gap-2",
+        className,
       )}
     >
       {BADGES.map(({ icon: Icon, label }) => (
         <div
           key={label}
           className={cn(
-            "flex items-center gap-2 border bg-card shadow-card transition-base",
-            variant === "default" &&
-              "rounded-lg px-4 py-3 min-w-[140px] flex-1 hover:-translate-y-0.5 hover:shadow-md",
-            variant === "compact" &&
-              "rounded-lg px-3 py-2 hover:-translate-y-0.5 hover:shadow-md",
-            variant === "overlap" &&
-              "rounded-full border-2 border-background px-4 py-2.5 hover:z-10 hover:scale-105 hover:shadow-md"
+            "premium-card flex items-center gap-3 p-4 text-left",
+            variant === "compact" && "p-3",
+            variant === "overlap" && "rounded-full border-2 border-background px-4 py-2.5 shadow-md",
           )}
         >
-          <Icon
-            className={cn(
-              "shrink-0 text-accent-green",
-              variant === "compact" || variant === "overlap"
-                ? "h-4 w-4"
-                : "h-5 w-5"
-            )}
-          />
-          <span
-            className={cn(
-              "font-medium",
-              variant === "compact" ? "text-xs" : "text-sm"
-            )}
-          >
-            {label}
-          </span>
+          <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-accent-green-soft text-accent-green shadow-sm">
+            <Icon className="h-5 w-5" />
+          </div>
+          <span className="text-sm font-semibold text-primary">{label}</span>
         </div>
       ))}
     </div>

@@ -67,6 +67,8 @@ export function Header() {
             className="md:hidden rounded-md p-2 hover:bg-accent transition-colors"
             onClick={() => setOpen((prev) => !prev)}
             aria-label="Toggle menu"
+            aria-expanded={open}
+            aria-controls="mobile-nav"
           >
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
@@ -74,7 +76,7 @@ export function Header() {
 
         {/* Mobile Navigation */}
         {open && (
-          <div className="md:hidden border-t border-border bg-background animate-fade-in">
+          <div id="mobile-nav" className="md:hidden border-t border-border bg-background animate-fade-in">
             <div className="container flex flex-col gap-1 py-2">
               {navItems.map((item) => (
                 <RouterNavLink
